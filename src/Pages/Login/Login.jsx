@@ -7,6 +7,7 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
@@ -87,6 +88,10 @@ const Login = () => {
                         </div>
                         <div className='pt-6'>
                             <p><small>New Here ? <Link to='/signup'><span className='text-blue-400'>Create an Account</span></Link></small></p>
+
+                        </div>
+                        <div className='my-4'>
+                            <SocialLogin></SocialLogin>
 
                         </div>
                     </form>

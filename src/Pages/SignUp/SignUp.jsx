@@ -1,13 +1,15 @@
 import React from 'react';
 
 import { useForm } from 'react-hook-form';
-
+import { FaGoogle } from 'react-icons/fa';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import signup from '../../assets/images/signup.png'
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hooks/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 
 
@@ -23,7 +25,7 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                updateUserProfile(data.name, data.photoUrl)
+                updateUserProfile(data.displayName, data.photoUrl)
                     .then(() => {
                         console.log('user profile info update')
                         reset()
@@ -42,6 +44,10 @@ const SignUp = () => {
 
             })
     };
+
+ 
+
+
 
     return (
         <div className='pt-28 px-10'>
@@ -106,6 +112,9 @@ const SignUp = () => {
                             <p><small>Already Have an Account ? <Link to='/login'><span className='text-blue-400'>Login Here</span></Link></small></p>
 
                         </div>
+                       <div>
+                    <SocialLogin></SocialLogin>
+                       </div>
                     </form>
                 </div>
                 <div>

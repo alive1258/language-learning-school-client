@@ -28,9 +28,9 @@ const Footer = () => {
                  cultures. With experienced instructors and a tailored curriculum, we offer a <br />
                   dynamic and engaging learning experience that empowers students to <br /> achieve their language learning goals.
               </p>
-              <div className='flex mt-4 items-center gap-2 text-gray-500'> <GoLocation/>
+              <div className='flex mt-4 items-center gap-2 text-gray-500'> <GoLocation size={30}/>
 
-              New York City, NY
+              Gareeb-e-Nawaz Avenue, Sector 11 Chawrasta Circle,<br /> Uttara Model Town, Dhaka, Bangladesh
               </div>
             </div>
           </div>
