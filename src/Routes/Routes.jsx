@@ -6,6 +6,7 @@ import Classes from "../Pages/Classes/Classes/Classes";
 import Secret from "../Pages/Secret/Secret";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import PrivetRoutes from "./PrivetRoutes";
 
 
   
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
         },
         {
           path:'secret',
-          element:<Secret></Secret>
+          element:<PrivetRoutes><Secret></Secret></PrivetRoutes>
         },
         {
           path:'login',
