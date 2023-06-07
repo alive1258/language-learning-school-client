@@ -3,10 +3,10 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes/Classes";
-import Secret from "../Pages/Secret/Secret";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivetRoutes from "./PrivetRoutes";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 
   
@@ -28,8 +28,8 @@ export const router = createBrowserRouter([
           element:<Classes></Classes>
         },
         {
-          path:'secret',
-          element:<PrivetRoutes><Secret></Secret></PrivetRoutes>
+          path:'dashboard',
+          element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>
         },
         {
           path:'login',

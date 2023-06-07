@@ -20,7 +20,7 @@ const Navbar = () => {
 
     return (
        <>
-        <div className='bg-gray-700 bg-opacity-50 max-w-screen-2xl w-full fixed z-10'>
+        <div className='bg-gray-700  max-w-screen-2xl w-full fixed z-10'>
 
 <div className='py-2 md:px-10  flex justify-between items-center '>
 
@@ -34,18 +34,37 @@ const Navbar = () => {
     </div>
 
     <div className="md:flex items-center hidden gap-8 text-lg  font-semibold">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to='/Instructors'>Instructors</NavLink>
-        <NavLink to='/classes'>Classes</NavLink>
-        <NavLink to='/secret'>Secret</NavLink>
+        <NavLink to="/" className='text-white'>Home</NavLink>
+        <NavLink to='/Instructors' className='text-white'>Instructors</NavLink>
+        <NavLink to='/classes' className='text-white'>Classes</NavLink>
+        <NavLink to='/dashboard' className='text-white'>Dashboard </NavLink>
      
         <div className="md:flex justify-center items-center">
-            <div className='md:flex md:mr-4'>
+         
+
+
+            <div className='md:block hidden'>
+                {
+                user ? <>
+                
+                <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] w-full">LogOut</button>
+                </> : <>
+                <Link to='/login'>
+                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] ml-2 md:block hidden">Login</button>
+                </Link>
+                </>
+            }
+
+
+            </div>
+
+             <div className='md:flex items-center md:ml-4'>
             {user && (
                 <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                     <button className="">
                         <img
                             style={{
+                                background:"white",
                                 height: "40px",
                                 width: "40px",
                                 borderRadius: "50%",
@@ -59,22 +78,6 @@ const Navbar = () => {
 
             )}
         </div>
-
-
-            <div className='md:block hidden'>
-                {
-                user ? <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] w-full">LogOut</button> : <Link to='/login'>
-                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] ml-2 md:block hidden">Login</button>
-                </Link>
-            }
-
-
-            </div>
-            {/* <div>
-               <Link to='/login'>
-               <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] ml-2 md:block hidden">Login</button>
-               </Link>
-            </div> */}
         </div>
 
 

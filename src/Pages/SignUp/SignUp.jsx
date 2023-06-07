@@ -6,30 +6,40 @@ import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import signup from '../../assets/images/signup.png'
 import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hooks/useAuth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
 
 const SignUp = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
- 
-    const { createUser } = useAuth()
+    const navigate = useNavigate()
+    const { createUser, updateUserProfile } = useAuth()
+
     const onSubmit = (data) => {
-        // Handle form submission
         console.log(data);
 
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'user created successfully',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
+                updateUserProfile(data.name, data.photoUrl)
+                    .then(() => {
+                        console.log('user profile info update')
+                        reset()
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'user created successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate('/')
+
+                    })
+                    .catch(error => console.log(error))
+
+
             })
     };
 
@@ -44,13 +54,13 @@ const SignUp = () => {
 
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input type="text" {...register("name", { required: true })} name='name' placeholder="Name" className="input input-bordered" />
-                            {errors.name && <span className='text-red-600'>Name is required</span>}
-                        </div>
+                    <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" {...register("name", { required: true })} name='name' placeholder="Name" className="input input-bordered" />
+                                {errors.name && <span className='text-red-600'>Name is required</span>}
+                            </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Photo Url</span>
