@@ -22,13 +22,15 @@ const Footer = () => {
             </div>
             <div className="pt-6 ">
               <p className='text-gray-500'>
-                Embark on exciting adventures and explore a world of 
-                technological<br /> marvels with our captivating robot toys that offer advanced features,<br /> realistic movements, and interactive play experiences for all ages.
-              
+              Our Language Learning School provides a comprehensive and immersive<br />
+               environment for individuals to acquire fluency and proficiency in multiple<br />
+                languages, enabling them to communicate effectively and embrace diverse<br />
+                 cultures. With experienced instructors and a tailored curriculum, we offer a <br />
+                  dynamic and engaging learning experience that empowers students to <br /> achieve their language learning goals.
               </p>
               <div className='flex mt-4 items-center gap-2 text-gray-500'> <GoLocation/>
 
-               Al Dabab Street, Al Ma'azer Dist.Riyadh
+              New York City, NY
               </div>
             </div>
           </div>

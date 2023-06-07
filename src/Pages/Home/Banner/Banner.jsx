@@ -1,7 +1,7 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import children from '../../../assets/images/children.jpeg'
+import banner1 from '../../../assets/images/children.jpeg'
 import banner2 from '../../../assets/images/banner2.jpg'
 import banner3 from '../../../assets/images/banr3.jpg'
 import banner4 from '../../../assets/images/banar4.jpg'
@@ -16,11 +16,11 @@ const Banner = () => {
 
 
     return (
-        <div>
+        <div className='pt-[96px]'>
             <Carousel >
                 <div className='grid grid-cols-2 items-center bg-gray-300 gap-6 p-10'>
                     <div>
-                        <img src={children} />
+                        <img src={banner1} />
                     </div>
                     <p className="text-3xl font-bold text-white">Putting Children First.
                         Preparing Children <br /> For
@@ -45,7 +45,7 @@ const Banner = () => {
                 <img className='' src={banner5} />
                     <p className="text-3xl font-bold text-white">
                         Teaching Turning
-                        Today's Learners Into
+                        Today's Learners <br /> Into
                         Tomorrow's Leaders</p>
                 </div>
 

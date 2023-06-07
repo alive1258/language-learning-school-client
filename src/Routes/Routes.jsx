@@ -3,6 +3,9 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors/Instructors";
 import Classes from "../Pages/Classes/Classes/Classes";
+import Secret from "../Pages/Secret/Secret";
+import Login from "../Pages/Login/Login";
+import SignUp from "../Pages/SignUp/SignUp";
 
 
   
@@ -22,7 +25,20 @@ export const router = createBrowserRouter([
         {
           path:'classes',
           element:<Classes></Classes>
+        },
+        {
+          path:'secret',
+          element:<Secret></Secret>
+        },
+        {
+          path:'login',
+          element:<Login></Login>
+        },
+        {
+          path:'signup',
+          element:<SignUp></SignUp>
         }
+
       ]
     },
   ]);

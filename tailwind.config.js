@@ -8,6 +8,6 @@ export default {
   theme: {
     extend: {},
   },
-  ugins: [require("daisyui")],
+  plugins: [require("daisyui")],
 }
 
