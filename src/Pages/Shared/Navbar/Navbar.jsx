@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
 import './Navbar.css'
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
@@ -34,7 +35,7 @@ const Navbar = () => {
                 <div className="md:flex items-center hidden gap-8 text-lg  font-semibold">
                     <NavLink to="/">Home</NavLink>
                     <NavLink to='/Instructors'>Instructors</NavLink>
-                    <NavLink to='/classes'>classes</NavLink>
+                    <NavLink to='/classes'>Classes</NavLink>
                     {/* {
                         user && <>
                             <NavLink to='/mytoys'>My Toys</NavLink>
@@ -84,10 +85,10 @@ const Navbar = () => {
                 </div>
 
 
-                {/* <div onClick={handleNav} className='md:hidden mr-6'>
+                <div onClick={handleNav} className='md:hidden mr-6'>
                     {!nav ? <AiOutlineMenu size={20} className='w-5' /> : <AiOutlineClose />}
 
-                </div> */}
+                </div>
             </div>
             {/* mobile menu  */}
 

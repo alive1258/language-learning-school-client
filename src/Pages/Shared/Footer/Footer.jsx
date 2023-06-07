@@ -59,10 +59,10 @@ const Footer = () => {
                 <p className="text-lg pb-6 text-white">Our Classes</p>
               <div className='text-gray-500'>
               <p>English Langues</p>
-                <p>Greman Langues</p>
-                <p>Spanish</p>
-                <p>French</p>
-                <p>chinese</p>
+                <p>German Langues</p>
+                <p>Spanish Langues</p>
+                <p>French Langues</p>
+                <p>chinese Langues</p>
               </div>
               </div>
             </div>
@@ -94,9 +94,7 @@ const Footer = () => {
               </div>
              
               
-                {/* <img src={tw} alt="" />
-                <img src={dis} alt="" />
-                <img src={you} alt="" /> */} 
+              
             </div>
           </div>
         </div>
