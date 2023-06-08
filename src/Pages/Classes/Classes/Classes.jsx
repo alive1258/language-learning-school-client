@@ -1,9 +1,10 @@
 import React from 'react';
+import AllClasses from '../AllClasses/AllClasses';
 
 const Classes = () => {
     return (
         <div>
-            Classes
+         <AllClasses></AllClasses>
         </div>
     );
 };

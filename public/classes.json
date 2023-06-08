@@ -1,6 +1,6 @@
 [
   {
-    "id":1,
+    
     "image": "https://mybayutcdn.bayut.com/mybayut/wp-content/uploads/Free-Arabic-classes-in-the-UAE-Cover-02-03.jpg",
     "course_name": "Arabic",
     "instructor": "Fatima",
@@ -9,7 +9,7 @@
     "category": "popularClass"
   },
   {
-    "id":2,
+   
     "image": "https://westendcc.ca/wp-content/uploads/Depositphotos_37438475_L-e1663013968743-1280x640.jpg",
     "course_name": "English",
     "instructor": "John Smith",
@@ -18,7 +18,7 @@
     "category": "popularClass"
   },
   {
-    "id":3,
+   
     "image": "https://aljawaz.com/en/wp-content/uploads/sites/2/2019/11/learn-the-german-language-in-germany.jpg",
     "course_name": "German",
     "instructor": "Jane Doe",
@@ -27,7 +27,7 @@
     "category": "popularClass"
   },
   {
-    "id":4,
+   
     "image": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2016_33/1668591/160815-spanish-class.jpg",
     "course_name": "Spanish",
     "instructor": "David Johnson",
@@ -37,7 +37,7 @@
   },
 
   {
-    "id":5,
+   
     "image": "https://www.linguaserviceworldwide.com/wp-content/uploads/2013/03/school-vinci-classroom1.jpg",
     "course_name": "French",
     "instructor": "Emily Wilson",
@@ -46,7 +46,7 @@
     "category": "popularClass"
   },
   {
-    "id":6,
+   
     "image": "https://media.istockphoto.com/id/460493825/photo/elementary-school-teacher-helping-young-boy-writing-chinese.jpg?s=612x612&w=0&k=20&c=2XONYnTlQer46-CbSIZofV4d_ANMk4Fn4XzZzyNNcW4=",
     "course_name": "Chinese",
     "instructor": "Michael Brown",
@@ -56,7 +56,7 @@
   },
 
   {
-    "id":7,
+  
     "image": "https://media.istockphoto.com/id/160442915/video/professor-at-work.jpg?s=640x640&k=20&c=ciwVu_JZYoBDwZN706dxvPXDoXlx0RPV46nziIbCMRg=",
     "course_name": "French",
     "instructor": "Emily Wilson",
@@ -65,7 +65,7 @@
     "category": "popularClass"
   },
   {
-    "id":8,
+  
     "image": "https://www.sprachcaffe-muenchen.com/typo3temp/fl_realurl_image/presence-courses-8283bdd2.png",
     "course_name": "English",
     "instructor": "Devid ",
@@ -75,7 +75,7 @@
   },
 
   {
-    "id":9,
+    
     "image": "https://kapitel-zwei.de/wp-content/uploads/2015/12/Deutschkurs-intensiv-in-Berlin-1030x687.jpg",
     "course_name": "German",
     "instructor": "Ashley",
@@ -87,7 +87,7 @@
 
 
   {
-    "id":10,
+    
     "image": "https://www.edarabia.com/wp-content/uploads/2020/02/arabic-language-beginner-group-uae-303901.jpg",
     "course_name": "Arabic",
     "instructor": "Abdul Rahman",
@@ -96,7 +96,7 @@
     "category": "popularClass"
   },
   {
-    "id":11,
+    
     "image": "https://uploads-ssl.webflow.com/5de551efc96eff9aad542bdb/5e1cc9b7a181690fa4a6ad7f_Chalkboard-Chinese-w1000.jpg",
     "course_name": "Chinese",
     "instructor": "Laim",
@@ -105,7 +105,7 @@
     "category": "popularClass"
   },
   {
-    "id":12,
+   
     "image": "https://thevanguardschool.com/wp-content/uploads/2020/01/IMG_20170120_113910-e1581102507871.jpg",
     "course_name": "Spanish",
     "instructor": "James Daniel",
@@ -114,7 +114,7 @@
     "category": "popularClass"
   },
   {
-    "id":13,
+   
     "image": "https://img.freepik.com/free-photo/isolated-shot-joyful-brenette-young-cute-woman-laughs-joyfully-as-hears-funny-anecdote-from-friend_496169-2540.jpg?size=626&ext=jpg&ga=GA1.2.736262964.1686200305&semt=ais",
     "instructor_name": "Amelia",
     "email": "smith@gamil.com",
@@ -123,7 +123,7 @@
   },
 
   {
-    "id":14,
+   
     "image": "https://img.freepik.com/free-photo/confident-young-businessman-suit-standing-with-arms-folded_171337-18599.jpg?size=626&ext=jpg",
     "instructor_name": "Jane Doe",
     "email": "doe@gmail.com",
@@ -131,7 +131,7 @@
    
   },
   {
-    "id":15,
+   
     "image": "https://img.freepik.com/free-photo/portrait-expressive-young-man-wearing-formal-suit_273609-6942.jpg?size=626&ext=jpg",
     "instructor_name": "David Johnson",
     "email": "johnson@gamil.com",
@@ -139,7 +139,7 @@
     
   },
   {
-    "id":16,
+  
     "image": "https://img.freepik.com/premium-photo/attractive-asian-female-entrepreneur_1258-12344.jpg?w=2000",
     "instructor_name": "Emma",
     "email": "emma@gmail.com",
@@ -148,7 +148,7 @@
   },
 
   {
-    "id":17,
+    
     "image": "https://img.freepik.com/premium-photo/modern-business-man-formal-suit-standing-with-crossed-arms-isolated-grey-background-businesspeople-concept_533057-1641.jpg",
     "instructor_name": "Michael Brown",
     "email": "brown@gamil.com",
@@ -156,7 +156,7 @@
 
   },
   {
-    "id":18,
+    
     "image": "https://img.freepik.com/free-photo/close-up-photo-young-successful-business-man-black-suit_171337-9509.jpg?w=360",
     "instructor_name": "Sarah Davis",
     "email": "davis@gamil.com",
@@ -164,7 +164,7 @@
 
   },
   {
-    "id":19,
+   
     "image": "https://img.freepik.com/free-photo/smiling-young-male-professional-standing-with-arms-crossed-while-making-eye-contact-against-isolated-background_662251-838.jpg?size=626&ext=jpg",
     "instructor_name": "Robert Johnson",
     "email": "johnson@gamil.com",
@@ -172,7 +172,7 @@
    
   },
   {
-    "id":20,
+   
     "image": "https://st.depositphotos.com/1010683/4447/i/450/depositphotos_44470093-stock-photo-asian-businesswoman-hold-clipboard.jpg",
     "instructor_name": "Olivia ",
     "email": "oliva@gamil.com",
@@ -180,7 +180,7 @@
   
   },
   {
-    "id":21,
+   
     "image": "https://img.freepik.com/free-photo/handsome-businessman-suit-glasses-cross-arms-chest-look_176420-21750.jpg?size=626&ext=jpg",
     "instructor_name": "Emily Wilson",
     "email": "wilson@gamil.com",
@@ -188,7 +188,7 @@
   
   },
   {
-    "id":22,
+   
     "image": "https://st.depositphotos.com/1010683/4327/i/450/depositphotos_43279319-stock-photo-asian-business-woman-writing-on.jpg",
     "instructor_name": "Sophia Garcia",
     "email": "garcia@gamil.com",
@@ -196,7 +196,7 @@
    
   },
   {
-    "id":23,
+    
     "image": "https://www.fotolog.com/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/05/best-suits-for-men-featured-image-final-696x541.jpg.webp",
     "instructor_name": "John Smith",
     "email": "john@gmail.com",
@@ -204,7 +204,7 @@
   
   },
   {
-    "id":24,
+   
     "image": "https://st.depositphotos.com/1010683/4684/i/450/depositphotos_46849979-stock-photo-business-woman-holding-clipboard.jpg",
     "instructor_name": "Isabella",
     "email": "smith@example.com",
