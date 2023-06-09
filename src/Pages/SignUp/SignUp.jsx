@@ -8,7 +8,6 @@ import { Helmet } from 'react-helmet-async';
 import useAuth from '../../Hooks/useAuth';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 
@@ -19,24 +18,37 @@ const SignUp = () => {
     const { createUser, updateUserProfile } = useAuth()
 
     const onSubmit = (data) => {
-        console.log(data);
-
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
-                updateUserProfile(data.displayName, data.photoUrl)
+
+                updateUserProfile(data.name, data.photoUrl)
                     .then(() => {
-                        console.log('user profile info update')
-                        reset()
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'user created successfully',
-                            showConfirmButton: false,
-                            timer: 1500
+                        const saveUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
                         })
-                        navigate('/')
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset()
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'user created successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/')
+                                }
+
+                            })
+
 
                     })
                     .catch(error => console.log(error))
@@ -45,7 +57,7 @@ const SignUp = () => {
             })
     };
 
- 
+
 
 
 
@@ -60,13 +72,13 @@ const SignUp = () => {
 
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                    <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Name</span>
-                                </label>
-                                <input type="text" {...register("name", { required: true })} name='name' placeholder="Name" className="input input-bordered" />
-                                {errors.name && <span className='text-red-600'>Name is required</span>}
-                            </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" {...register("name", { required: true })} name='name' placeholder="Name" className="input input-bordered" />
+                            {errors.name && <span className='text-red-600'>Name is required</span>}
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Photo Url</span>
@@ -112,10 +124,13 @@ const SignUp = () => {
                             <p><small>Already Have an Account ? <Link to='/login'><span className='text-blue-400'>Login Here</span></Link></small></p>
 
                         </div>
-                       <div>
-                    <SocialLogin></SocialLogin>
-                       </div>
+
                     </form>
+                </div>
+                <div>
+                    <div>
+                        <SocialLogin></SocialLogin>
+                    </div>
                 </div>
                 <div>
                     <img src={signup} alt="" />

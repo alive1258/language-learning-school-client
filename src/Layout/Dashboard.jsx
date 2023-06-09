@@ -8,15 +8,18 @@ import { ImSpoonKnife } from 'react-icons/im';
 import useClassCart from '../Hooks/useClassCart';
 
 const Dashboard = () => {
-    const [cart]=useClassCart()
+    const [cart] = useClassCart()
+    const isAdmin = true
+    const isInstructor = true
+
     return (
         <div>
-             <Navbar></Navbar>
+            <Navbar></Navbar>
             <div className='pt-24 fixed w-full'>
                 <div className="drawer lg:drawer-open">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content flex flex-col items-center justify-center">
-                       <Outlet></Outlet>
+                        <Outlet></Outlet>
                         {/* <h1 className=''>skdljgh </h1> */}
                         <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
@@ -25,22 +28,47 @@ const Dashboard = () => {
                         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full text-white bg-gray-300 text-lg font-semibold">
                             {/* Sidebar content here */}
-                            <li><NavLink to='/dashboard/userhome' ><FaHome />User Home</NavLink></li>
-                                    <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
-                                    <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
+                            {
+                                isAdmin ? (
                                     <li>
-                                        <NavLink to='/dashboard/mycart'><FaShoppingCart />
-                                            My Cart <span className="">+{cart?.length || 0}</span>
 
-                                        </NavLink>
+                                        <li><NavLink to='/dashboard/adminhome'><FaHome />Admin Home</NavLink></li>
+                                      
+                                        <li><NavLink to='/dashboard/manageclasses'><FaWallet />Manage Classes</NavLink></li>
+                                        <li><NavLink to='/dashboard/history'><FaBook />Manage Booking</NavLink></li>
+                                        <li><NavLink to='/dashboard/allusers'><FaUsers />All Users</NavLink></li>
 
                                     </li>
+                                ) : (
+                                    isInstructor ? (
+                                        <li>
+                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Add an Items</NavLink></li>
+                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />My Classes</NavLink></li>
+                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
+                                        </li>
+                                    ) : (
+                                        <>
+                                            <li><NavLink to='/dashboard/userhome' ><FaHome />User Home</NavLink></li>
+                                            <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
+                                            <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
+                                            <li>
+                                                <NavLink to='/dashboard/mycart'><FaShoppingCart />
+                                                    My Cart <span className="">+{cart?.length || 0}</span>
 
-                                       {/* <!-- Sidebar content here --> */}
+                                                </NavLink>
+
+                                            </li>
+                                        </>
+                                    )
+                                )
+                            }
 
 
-                        <div className='border-b my-4 text-[#ffffff]'></div>
-                        {/* <li><NavLink to='/'><FaHome /> Home</NavLink></li>
+                            {/* <!-- Sidebar content here --> */}
+
+
+                            <div className='border-b my-4 text-[#ffffff]'></div>
+                            {/* <li><NavLink to='/'><FaHome /> Home</NavLink></li>
                         <li><NavLink to='/menu'><GiHamburgerMenu /> Our Menu</NavLink></li>
                         <li><NavLink to='/order/salad'><FaHome /> Order Food</NavLink></li> */}
 
@@ -49,7 +77,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-           
+
 
 
         </div>
