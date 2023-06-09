@@ -1,7 +1,7 @@
 
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import PopularCourse from '../PopularCourse/PopularCourse';
 import useInformation from '../../../Hooks/useInformation';
+import ClassCart from '../../../components/ClassCart/ClassCart';
 
 const PopularClass = () => {
     const [information] = useInformation()
@@ -17,10 +17,10 @@ const PopularClass = () => {
 
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 px-10'>
                 {
-                    popularClasses.map(course => <PopularCourse
+                    popularClasses.map(course => <ClassCart
                         key={course._id}
                         course={course}
-                    ></PopularCourse>)
+                    ></ClassCart>)
                 }
 
             </div>

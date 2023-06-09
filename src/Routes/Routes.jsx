@@ -6,8 +6,10 @@ import Classes from "../Pages/Classes/Classes/Classes";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivetRoutes from "./PrivetRoutes";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Dashboard from "../Layout/Dashboard";
+import MyCart from "../Pages/Dashboard/MyCart/MyCart";
+
 
 
   
@@ -29,10 +31,7 @@ export const router = createBrowserRouter([
           path:'classes',
           element:<Classes></Classes>
         },
-        {
-          path:'dashboard',
-          element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>
-        },
+       
         {
           path:'login',
           element:<Login></Login>
@@ -41,7 +40,18 @@ export const router = createBrowserRouter([
           path:'signup',
           element:<SignUp></SignUp>
         }
+      
 
       ]
     },
+    {
+      path:'dashboard',
+      element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
+      children:[
+        {
+          path:"mycart",
+          element:<MyCart></MyCart>
+        }
+      ]
+    }
   ]);
