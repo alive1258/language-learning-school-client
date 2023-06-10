@@ -6,11 +6,18 @@ import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaBook, FaUsers } from
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImSpoonKnife } from 'react-icons/im';
 import useClassCart from '../Hooks/useClassCart';
+import useAdmin from '../Hooks/useAdmin';
+import useInstructor from '../Hooks/useInstructor';
 
 const Dashboard = () => {
     const [cart] = useClassCart()
-    const isAdmin = true
-    const isInstructor = true
+    // const isAdmin = true
+
+
+    const [isAdmin] = useAdmin()
+
+    const [isInstructor] = useInstructor()
+    // console.log(isInstructor)
 
     return (
         <div>
@@ -28,25 +35,27 @@ const Dashboard = () => {
                         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                         <ul className="menu p-4 w-80 h-full text-white bg-gray-300 text-lg font-semibold">
                             {/* Sidebar content here */}
+
+
                             {
-                                isAdmin ? (
+                                isAdmin ? <>
                                     <li>
 
                                         <li><NavLink to='/dashboard/adminhome'><FaHome />Admin Home</NavLink></li>
-                                      
                                         <li><NavLink to='/dashboard/manageclasses'><FaWallet />Manage Classes</NavLink></li>
                                         <li><NavLink to='/dashboard/history'><FaBook />Manage Booking</NavLink></li>
                                         <li><NavLink to='/dashboard/allusers'><FaUsers />All Users</NavLink></li>
 
                                     </li>
-                                ) : (
-                                    isInstructor ? (
+                                    </> : 
+                                    isInstructor ? <>
                                         <li>
-                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Add an Items</NavLink></li>
-                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />My Classes</NavLink></li>
-                                              <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
+                                            <li><NavLink to='/dashboard/instructorhome'><FaHome />Instructor Home</NavLink></li>
+                                            <li><NavLink to='/dashboard/addcourse'><ImSpoonKnife />Add an course</NavLink></li>
+                                            <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />My Classes</NavLink></li>
+                                            <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
                                         </li>
-                                    ) : (
+                                        </>: 
                                         <>
                                             <li><NavLink to='/dashboard/userhome' ><FaHome />User Home</NavLink></li>
                                             <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
@@ -59,8 +68,8 @@ const Dashboard = () => {
 
                                             </li>
                                         </>
-                                    )
-                                )
+                                    
+                                
                             }
 
 

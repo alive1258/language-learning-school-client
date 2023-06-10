@@ -10,6 +10,9 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Dashboard from "../Layout/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddCourse from "../Pages/Dashboard/AddCourse/AddCourse";
+import InstructorRoute from "./InstructorRoute";
+import AdminRoute from "./AdminRoute";
 
 
 
@@ -50,13 +53,19 @@ export const router = createBrowserRouter([
       element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
       children:[
         {
+          path:"allusers",
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+        },
+        {
           path:"mycart",
           element:<MyCart></MyCart>
         },
+      
         {
-          path:"allusers",
-          element:<AllUsers></AllUsers>
+          path:'addcourse',
+          element:<InstructorRoute><AddCourse></AddCourse></InstructorRoute>
         }
+       
       ]
     }
   ]);

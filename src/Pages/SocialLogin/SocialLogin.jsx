@@ -35,10 +35,10 @@ const SocialLogin = () => {
             });
     }
     return (
-        <div>
+        <div className='px-8'>
             <div className='divider'></div>
 
-            <div className='my-4 text-center'>
+            <div className='text-center pb-12'>
                 <button onClick={handleGoogleSignIn} className='flex justify-center items-center border py-1 rounded-lg px-8 w-full'>
                     <img className='w-16 h-14' src={googlelogo} alt="" />
                     {/* <FaGoogle size={25} className=''></FaGoogle> */}

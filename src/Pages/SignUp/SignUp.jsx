@@ -62,7 +62,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='pt-28 px-10'>
+        <div className='pt-28 w-full px-10'>
             <Helmet>
                 <title>Language Learning School | SignUp</title>
             </Helmet>
@@ -126,13 +126,14 @@ const SignUp = () => {
                         </div>
 
                     </form>
-                </div>
-                <div>
+                    <div>
                     <div>
                         <SocialLogin></SocialLogin>
                     </div>
                 </div>
-                <div>
+                </div>
+              
+                <div className=''>
                     <img src={signup} alt="" />
                 </div>
             </div>
