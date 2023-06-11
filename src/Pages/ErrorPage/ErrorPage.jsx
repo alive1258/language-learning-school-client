@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useRouteError } from 'react-router-dom';
-import erroepic from '../../assets/images/errorpic.jpg'
+import erroepic from '../../assets/images/errorpic.png'
 
 const ErrorPage = () => {
     const error=useRouteError()
@@ -14,7 +14,7 @@ const ErrorPage = () => {
             <div>
             <div id="error-page" className='text-center mt-10'>
            <div className='flex justify-center'>
-           <img 
+           <img className='w-1/2 rounded-lg'
                     src={erroepic}
                     alt=""
                 />

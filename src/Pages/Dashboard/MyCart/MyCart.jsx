@@ -4,6 +4,7 @@ import useClassCart from '../../../Hooks/useClassCart';
 import { Link } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import MyCartTable from '../MyCartTable/MyCartTable';
 
 
 
@@ -78,38 +79,15 @@ const MyCart = () => {
                     <tbody>
                         {/* const {_id, image, price, course_name,instructor,available_seats} = course; */}
                         {
-                            cart.map((item, index) => <tr key={item._id}>
-                                <td>
-                                    {index + 1}
-                                </td>
-                                <td>
-                                    <div className="">
-                                        <div className="avatar">
-                                            <div className="mask rounded-md w-14 h-14">
-                                                <img src={item.image} alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </td>
-                                <td>
-                                    {item.course_name}
-                                </td>
-                                <td className=''>
-                                    {item.instructor}
-                                </td>
-                                <td className=''>
-                                    {item.available_seats}
-                                </td>
-                                <td className=''>${item.price}</td>
-                                <td>
-                                
-                                    <Link to={`/dashboard/payment/${item._id}`} >
-                                        <button className="btn btn-warning btn-md mr-4">Pay</button>
-                                    </Link>
-                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost  bg-red-500 text-white"><FaTrash /></button>
-                                </td>
-                            </tr>)
+                            cart.map((item, index) =><MyCartTable 
+                            key={item._id}
+                            item={item}
+                            index={index}
+                            
+                            ></MyCartTable>
+                            
+                            
+                            )
                         }
 
 

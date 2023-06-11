@@ -25,7 +25,7 @@ const [cart]=useClassCart()
 
     return (
         <>
-            <div className='bg-gray-700  max-w-screen-2xl w-full fixed z-10'>
+            <div className='bg-gray-200  max-w-screen-2xl w-full fixed z-10'>
 
                 <div className='py-2 md:px-10  flex justify-between items-center '>
 
@@ -104,7 +104,7 @@ const [cart]=useClassCart()
                 {/* mobile menu  */}
 
                 <div >
-                    <div className={!nav ? 'hidden' : 'absolute bg-[#4ee9d9] w-full text-white  h-screen md:hidden px-8'}>
+                    <div className={!nav ? 'hidden' : 'absolute bg-gray-200 w-full text-white  h-screen md:hidden px-8'}>
                         <p className='border-b-2 mb-4 border-[#ff8c00] w-full'>
                             <NavLink to="/">Home</NavLink>
                         </p>
