@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
 import './Navbar.css'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { BsMoonStars,BsFillMoonFill } from 'react-icons/bs';
+import { HiOutlineLightBulb } from 'react-icons/hi';
 import useAuth from '../../../Hooks/useAuth';
 import useClassCart from '../../../Hooks/useClassCart';
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
-const [cart]=useClassCart()
+    const [cart] = useClassCart()
 
 
     const [nav, setNav] = useState(false)
     const handleNav = () => setNav(!nav)
-  
+
+    // const [ light, setLight] = useState(false)
+    // const handleToggleTheme = () => setLight(!light)
+
 
     const handleLogOut = () => {
         logOut()
@@ -21,7 +26,21 @@ const [cart]=useClassCart()
             .catch((error) => console.log(error));
     };
 
-   
+    const [theme, setTheme] = useState(false)
+
+    const handleToggleTheme = () => {
+        setTheme(!theme)
+
+    }
+
+    useEffect(() => {
+        if (theme === true) {
+            document.body.classList.add("dark")
+        } else {
+            document.body.classList.remove("dark")
+        }
+
+    }, [theme])
 
     return (
         <>
@@ -45,7 +64,7 @@ const [cart]=useClassCart()
                         <NavLink to='/dashboard/mycart' className='text-white'>Dashboard </NavLink>
                         <NavLink to='/dashboard/mycart' className='text-white'>
                             <button className="btn">
-                                
+
                                 <div className="badge">+{cart?.length || 0}</div>
                             </button>
 
@@ -90,6 +109,13 @@ const [cart]=useClassCart()
 
                                 )}
                             </div>
+                        </div>
+                        <div>
+                            <button onClick={handleToggleTheme} className='border-2 border-gray-400 px-4 py-2 rounded-xl'>
+                                {/* <BsMoonStars /> */}
+                                {!theme ? < HiOutlineLightBulb size={20} className='w-5 text-white' /> : <BsFillMoonFill size={20} className='text-black'/>}
+                                {/* <BsFillMoonFill /> */}
+                            </button>
                         </div>
 
 

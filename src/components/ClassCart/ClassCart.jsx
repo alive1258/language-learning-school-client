@@ -70,10 +70,10 @@ const ClassCart = ({course}) => {
           {course_name}
             
           </h2>
-          <p>Instructor Name: <span className='font-semibold'>{instructor}</span></p>
+          <p className='text-gray-700'>Instructor Name: <span className='font-semibold '>{instructor}</span></p>
          <div className='flex'>
-         <p>Price: ${price}</p>
-          <p>Available Seats: {available_seats}</p>
+         <p className='text-gray-700'>Price: ${price}</p>
+          <p className='text-gray-700'>Available Seats: {available_seats}</p>
          </div>
           <div className="card-actions my-4">
             <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] '>Enroll Now</button>

@@ -1,4 +1,12 @@
 
+.Light-theme{
+  --bg-clr:#ffffff;
+}
+.dark-theme{
+  --bg-clr:#111b20;
+  --text-clr:#ffffff;
+
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;

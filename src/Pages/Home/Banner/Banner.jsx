@@ -22,28 +22,28 @@ const Banner = () => {
                     <div>
                         <img src={banner1} />
                     </div>
-                    <p className="text-3xl font-bold text-white">Putting Children First.
+                    <p className="text-3xl font-bold ">Putting Children First.
                         Preparing Children <br /> For
                         Success In Life</p>
                 </div>
                 <div className='grid grid-cols-2 items-center bg-gray-300 p-10'>
                 <img  src={banner2} />
-                    <p className="text-3xl font-bold text-white">Experience Effective Language <br /> Education at our School</p>
+                    <p className="text-3xl font-bold ">Experience Effective Language <br /> Education at our School</p>
                 </div>
                 <div className='grid grid-cols-2 items-center bg-gray-300 p-10'>
                 <img  src={banner3} />
-                    <p className="text-3xl font-bold text-white">Transform Your Communication Skills <br /> at our Language School</p>
+                    <p className="text-3xl font-bold ">Transform Your Communication Skills <br /> at our Language School</p>
                 </div>
                 <div className='grid grid-cols-2 items-center bg-gray-300 p-10'>
                 <img src={banner4} />
-                    <p className="text-3xl font-bold text-white">To have another
+                    <p className="text-3xl font-bold ">To have another
                          language is to  <br /> possess
                         a second soul</p>
                 </div>
                 
                 <div className='grid grid-cols-2 items-center bg-gray-300 p-10'>
                 <img className='' src={banner5} />
-                    <p className="text-3xl font-bold text-white">
+                    <p className="text-3xl font-bold">
                         Teaching Turning
                         Today's Learners <br /> Into
                         Tomorrow's Leaders</p>

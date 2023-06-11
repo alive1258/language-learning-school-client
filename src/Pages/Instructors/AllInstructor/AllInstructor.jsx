@@ -16,7 +16,7 @@ const AllInstructor = () => {
                  Join our classes and learn from our talented instructors <br /> who are here to support
                   and guide you every step of the way.
                   </p>
-              <div className='grid md:grid-cols-3 grid-cols-1 md:px-10 px-4 gap-10 mt-10'>
+              <div className='grid md:grid-cols-3 grid-cols-1 md:px-10 px-6 gap-10 my-10'>
                 {
                     popularALlInstructor.map(instructors => <TotalInstructor
                         key={instructors._id}
