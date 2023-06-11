@@ -16,7 +16,7 @@ const Instructor = ({instructors}) => {
           <p>Instructor Email: <span className='font-semibold'>{email}</span></p>
         
           <div className="card-actions my-4">
-            <button className='btn'>See more</button>
+            <button className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] '>See More</button>
             
           </div>
         </div>

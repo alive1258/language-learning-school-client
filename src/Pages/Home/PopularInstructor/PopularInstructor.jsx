@@ -17,8 +17,8 @@ const PopularInstructor = () => {
     return (
         <div className='mt-28'>
             <SectionTitle heading="Meet Out Popular Instructor" />
-            <p className='text-center'>They are experienced, knowledgeable, and passionate about teaching. With their expertise, <br /> you can gain valuable insights and improve your language skills effectively.</p>
-            <div className='grid md:grid-cols-3 grid-cols-1 px-10 gap-10 mt-10'>
+            <p className='text-center px-4'>They are experienced, knowledgeable, and passionate about teaching. With their expertise, <br /> you can gain valuable insights and improve your language skills effectively.</p>
+            <div className='grid md:grid-cols-3 grid-cols-1 md:px-10 px-6 gap-10 mt-10 pb-10'>
                 {
                     popularInstructor.map(instructors => <Instructor
                         key={instructors._id}

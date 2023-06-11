@@ -3,7 +3,7 @@ import React from 'react';
 const TotalInstructor = ({ instructors }) => {
     const { instructor_name, image, email } = instructors
     return (
-        <div>
+      
             <div className="card w-96 bg-base-100 shadow-xl">
                 <figure><img className='h-44 w-full' src={image} alt="Shoes" /></figure>
                 <div className="card-body">
@@ -14,12 +14,12 @@ const TotalInstructor = ({ instructors }) => {
                     <p>Instructor Email: <span className='font-semibold'>{email}</span></p>
 
                     <div className="card-actions my-4">
-                        <button className='btn'>See more</button>
+                        <button className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] '>See More</button>
 
                     </div>
                 </div>
             </div>
-        </div>
+       
     );
 };
 

@@ -76,7 +76,7 @@ const ClassCart = ({course}) => {
           <p>Available Seats: {available_seats}</p>
          </div>
           <div className="card-actions my-4">
-            <button onClick={()=>handleAddToCart(course)} className='btn'>buy Now</button>
+            <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] '>Enroll Now</button>
             
           </div>
         </div>
