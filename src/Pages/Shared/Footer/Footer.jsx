@@ -8,7 +8,7 @@ import { GoLocation } from 'react-icons/go';
 
 const Footer = () => {
     return (
-        <div className="px-6 md:mt-36 md:px-10  md:py-10 bg-gray-700">
+        <div className="px-6 md:mt-36 md:px-10  md:py-10 bg-gray-200">
       <div className="py-6">
         <div className="grid border-b md:grid-cols-2 grid-cols-1 gap-10  pb-8">
           <div>
@@ -37,7 +37,7 @@ const Footer = () => {
           <div>
             <div className="grid md:grid-cols-3 grid-cols-2 md:pt-6 gap-4">
               <div>
-                <p className="text-lg pb-6 text-white">Get To Know Us</p>
+                <p className="text-lg pb-6 text-white font-semibold">Get To Know Us</p>
                <div className='text-gray-500'>
                <p>Home</p>
                 
@@ -48,7 +48,7 @@ const Footer = () => {
                </div>
               </div>
               <div>
-                <p className="text-lg pb-6 text-white">Let Us Help You</p>
+                <p className="text-lg pb-6 text-white font-semibold">Let Us Help You</p>
               <div className='text-gray-500'>
               <p>Your Account</p>
                 <p>Order History</p>
@@ -58,19 +58,21 @@ const Footer = () => {
               </div>
               </div>
               <div>
-                <p className="text-lg pb-6 text-white">Our Classes</p>
+                <p className="text-lg pb-6 text-white font-semibold">Contact US</p>
               <div className='text-gray-500'>
-              <p>English Langues</p>
-                <p>German Langues</p>
-                <p>Spanish Langues</p>
-                <p>French Langues</p>
-                <p>chinese Langues</p>
+              <p>Email: shool@gmail.com</p>
+                <p>Phone: 01700700010</p>
+                <p>Tel: +444 333 22</p>
+                {/* <p>French Langues</p>
+                <p>chinese Langues</p> */}
               </div>
               </div>
             </div>
           </div>
         </div>
+        <div className='border-b border-gray-500'></div>
         <div className="pt-4 pb-4 flex justify-between ">
+         
           <div>
             <p className="text-white">
               © Copyright 2023, All Rights Reserved by Language Learning School 
