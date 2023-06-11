@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 
 
 const MyCart = () => {
-    const [cart,refetch] = useClassCart()
+    const [cart, refetch] = useClassCart()
     const total = cart.reduce((sum, course) => course.price + sum, 0)
     // const availableSeat = cart.reduce((subtract, course) => course.available_seats - subtract, 0)
 
@@ -26,17 +26,17 @@ const MyCart = () => {
                 fetch(`http://localhost:5000/carts/${item._id}`, {
                     method: "DELETE"
                 })
-                .then(res=>res.json())
-                .then(data=>{
-                    if(data.deletedCount >0){
-                        refetch()
-                        Swal.fire(
-                            'Deleted!',
-                            'Your file has been deleted.',
-                            'success'
-                          )
-                    }
-                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch()
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
 
 
             }
@@ -76,7 +76,7 @@ const MyCart = () => {
                         </tr>
                     </thead>
                     <tbody>
-                    {/* const {_id, image, price, course_name,instructor,available_seats} = course; */}
+                        {/* const {_id, image, price, course_name,instructor,available_seats} = course; */}
                         {
                             cart.map((item, index) => <tr key={item._id}>
                                 <td>
@@ -96,16 +96,17 @@ const MyCart = () => {
                                     {item.course_name}
                                 </td>
                                 <td className=''>
-                                  {item.instructor}
+                                    {item.instructor}
                                 </td>
                                 <td className=''>
-                                  {item.available_seats}
+                                    {item.available_seats}
                                 </td>
                                 <td className=''>${item.price}</td>
                                 <td>
-                                <Link to='/dashboard/payment'>
-                    <button className="btn btn-warning btn-sm">Pay</button>
-                </Link>
+                                
+                                    <Link to={`/dashboard/payment/${item._id}`} >
+                                        <button className="btn btn-warning btn-md mr-4">Pay</button>
+                                    </Link>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost  bg-red-500 text-white"><FaTrash /></button>
                                 </td>
                             </tr>)

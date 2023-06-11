@@ -1,11 +1,12 @@
 import React from 'react';
-import useInformation from '../../../Hooks/useInformation';
+
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import ClassCart from '../../../components/ClassCart/ClassCart';
+import useClasses from '../../../Hooks/useClasses';
 
 const AllClasses = () => {
-    const [information] = useInformation()
-    const popularAllClass = information.filter(course => course.category === "popularClass")
+    const [classes] = useClasses()
+    // const popularAllClass = information.filter(course => course.category === "popularClass")
     return (
         <div className='pt-28 px-10'>
             <SectionTitle heading="Total Language Classes" />
@@ -15,7 +16,7 @@ const AllClasses = () => {
                 with our comprehensive selection of classes.</p>
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 px-10 pt-10'>
                 {
-                    popularAllClass.map(course => <ClassCart
+                    classes.map(course => <ClassCart
                         key={course._id}
                         course={course}
                     >

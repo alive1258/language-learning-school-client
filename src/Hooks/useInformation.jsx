@@ -1,37 +1,17 @@
-// import React from 'react';
-// import { useQuery } from '@tanstack/react-query';
-
-// const useClasses = () => {
-//     const {data: allClass = [], isLoading: loading, refetch} = useQuery({
-//         queryKey: ['menus'],
-//         queryFn: async() => {
-//             const res = await fetch('http://localhost:5000/classes');
-//             return res.json();
-//         }
-//     })
-
-//     return [allClass, loading, refetch]
-// };
-
-// export default useClasses;
-import React, { useEffect, useState } from 'react';
-
+import { useQuery } from '@tanstack/react-query';
 
 
 const useInformation = () => {
-    const [information, setInformation] = useState([])
-    const [loading, setLoading] = useState(true)
+ 
+    const {data: information = [], isLoading: loading, refetch} = useQuery({
+        queryKey: ['informations'],
+        queryFn: async() => {
+                       const res = await fetch('http://localhost:5000/informations');
+                       return res.json();
+                   }
+    })
 
-    useEffect(() => {
-        fetch('http://localhost:5000/informations')
-            .then(res => res.json())
-            .then(data => {
-                setLoading(false)
-                setInformation(data)
-            })
-    }, [])
-
-    return [information, loading]
+    return [information, loading,refetch]
 };
 
 export default useInformation;

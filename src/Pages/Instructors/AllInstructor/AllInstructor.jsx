@@ -5,6 +5,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const AllInstructor = () => {
     const [information] = useInformation()
+    // const [information] = useInformation()
 
     const popularALlInstructor = information.filter(teacher => teacher.category === "instructor")
     return (

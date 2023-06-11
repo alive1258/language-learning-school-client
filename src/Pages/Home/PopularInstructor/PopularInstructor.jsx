@@ -2,10 +2,12 @@
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import Instructor from '../Instructor/Instructor';
 import useInformation from '../../../Hooks/useInformation';
+// import useUsers from '../../../Hooks/useUsers';
 
 const PopularInstructor = () => {
 
     const [information] = useInformation()
+    // const [users] = useUsers()
 
     const popularALlInstructor = information.filter(teacher => teacher.category === "instructor")
     const popularInstructor = popularALlInstructor.slice(0, 6)

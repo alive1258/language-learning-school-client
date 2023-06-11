@@ -22,10 +22,10 @@ const Dashboard = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className='pt-24 fixed w-full'>
+            <div className='pt-24  fixed w-full'>
                 <div className="drawer lg:drawer-open">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                    <div className="drawer-content flex flex-col items-center justify-center">
+                    <div className="drawer-content ">
                         <Outlet></Outlet>
                         {/* <h1 className=''>skdljgh </h1> */}
                         <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
@@ -52,8 +52,8 @@ const Dashboard = () => {
                                         <li>
                                             <li><NavLink to='/dashboard/instructorhome'><FaHome />Instructor Home</NavLink></li>
                                             <li><NavLink to='/dashboard/addcourse'><ImSpoonKnife />Add an course</NavLink></li>
-                                            <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />My Classes</NavLink></li>
-                                            <li><NavLink to='/dashboard/addItem'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
+                                            <li><NavLink to='/dashboard/myclasses'><ImSpoonKnife />My Classes</NavLink></li>
+                                            <li><NavLink to='/dashboard/enrollstudents'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
                                         </li>
                                         </>: 
                                         <>

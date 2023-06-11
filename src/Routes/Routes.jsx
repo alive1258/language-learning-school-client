@@ -13,6 +13,10 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddCourse from "../Pages/Dashboard/AddCourse/AddCourse";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
+import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import UpdateCourse from "../Pages/Dashboard/UpdateCourse/UpdateCourse";
+import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 
@@ -60,10 +64,28 @@ export const router = createBrowserRouter([
           path:"mycart",
           element:<MyCart></MyCart>
         },
+        {
+          path:'payment/:id',
+          element:<Payment></Payment>
+
+        },
       
         {
           path:'addcourse',
           element:<InstructorRoute><AddCourse></AddCourse></InstructorRoute>
+        },
+        {
+          path:"myclasses",
+          element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+        },
+    
+        {
+          path:"updatecourse/:id",
+          element:<InstructorRoute><UpdateCourse></UpdateCourse></InstructorRoute>
+        },
+        {
+          path:"manageclasses",
+          element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
         }
        
       ]

@@ -2,6 +2,7 @@ import React from 'react';
 
 const Instructor = ({instructors}) => {
     const {instructor_name,image,email}=instructors
+    // const {name,image,email}=instructors
     return (
         <div>
                <div className="card w-96 bg-base-100 shadow-xl">
@@ -9,6 +10,7 @@ const Instructor = ({instructors}) => {
         <div className="card-body">
           <h2 className="card-title">
           {instructor_name}
+          {/* {name} */}
             
           </h2>
           <p>Instructor Email: <span className='font-semibold'>{email}</span></p>

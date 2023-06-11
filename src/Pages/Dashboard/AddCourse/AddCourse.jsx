@@ -3,6 +3,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import useAuth from '../../../Hooks/useAuth';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const AddCourse = () => {
@@ -32,6 +33,22 @@ const AddCourse = () => {
                     const { course_name, price, instructor, email, available_seats } = data
                     const courseItem = { course_name, price: parseFloat(price), instructor, email, available_seats, image: imgURL }
                     console.log(courseItem)
+                    axiosSecure.post('/classes',courseItem)
+                    .then(data=>{
+                        console.log('after posting new course Item', data.data)
+                        if(data.data.insertedId){
+                            reset();
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'course added successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                              })
+
+                        }
+
+                    })
 
 
                 }

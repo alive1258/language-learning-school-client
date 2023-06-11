@@ -1,12 +1,12 @@
 
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-import useInformation from '../../../Hooks/useInformation';
 import ClassCart from '../../../components/ClassCart/ClassCart';
+import useClasses from '../../../Hooks/useClasses';
 
 const PopularClass = () => {
-    const [information] = useInformation()
-    const popularAllClass = information.filter(course => course.category === "popularClass")
-    const popularClasses = popularAllClass.slice(0, 6)
+    const [classes] = useClasses()
+    // const popularAllClass = information.filter(course => course.category === "popularClass")
+    const popularClasses = classes.slice(0, 6)
 
     return (
         <div>
