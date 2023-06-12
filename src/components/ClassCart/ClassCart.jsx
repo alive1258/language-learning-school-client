@@ -47,7 +47,7 @@ const ClassCart = ({ course }) => {
     if (user && user.email) {
       const cartItem = { courseItemId: _id, course_name, image, price, instructor, available_seats, email: user.email }
 
-      fetch('http://localhost:5000/carts', {
+      fetch('https://language-learning-school-server-bay.vercel.app/carts', {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -105,7 +105,7 @@ const ClassCart = ({ course }) => {
 
         
 
-          <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>Enroll Now</button>
+          <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400'>Enroll Now</button>
 
         </div>
       </div>

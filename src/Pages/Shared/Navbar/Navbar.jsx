@@ -48,9 +48,9 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='max-w-screen-2xl bg-gray-200 w-full fixed z-10'>
+            <div className='max-w-screen-2xl bg-[#cbf8f8] w-full fixed z-10'>
 
-                <div className='py-2 md:px-10  flex justify-between items-center '>
+                <div className='py-2 md:px-10 text-gray-700 flex justify-between items-center '>
 
 
                     <div className='flex items-center gap-2'>
@@ -59,7 +59,7 @@ const Navbar = () => {
                                 <img className='h-20 w-20' src={logo} alt="" />
                             </Link>
                         </div>
-                        <div className='md:text-2xl text-xl  font-bold mb-2'><span className='text-blue-400'>Language Learning</span> School</div>
+                        <div className='md:text-2xl text-xl  font-bold mb-2'><span className='text-blue-500'>Language Learning</span> School</div>
                     </div>
 
                     <div className="md:flex items-center hidden gap-8 text-lg font-semibold">
@@ -70,17 +70,20 @@ const Navbar = () => {
                         {
                             isAdmin ? <>
 
-                                <NavLink to='/dashboard/adminhome' >dashboard</NavLink>
+                                <NavLink to='/dashboard/adminhome' >Dashboard</NavLink>
 
 
                             </> :
                                 isInstructor ? <>
 
-                                    <NavLink to='/dashboard/instructorhome' >dashboard</NavLink>
+                                    <NavLink to='/dashboard/instructorhome' >Dashboard</NavLink>
 
                                 </> : <>
 
-                                    <NavLink to='/dashboard/studenthome' >dashboard</NavLink>
+                               {
+                                user && (
+                                    <div>
+                                             <NavLink to='/dashboard/studenthome' >Dashboard</NavLink>
                                     <NavLink to='/dashboard/mycart' className='mx-4 mt-4'>
                                         <button className="relative text-gray-700">
                                             <div><AiOutlineShoppingCart size={25} className='' /></div>
@@ -89,6 +92,10 @@ const Navbar = () => {
                                         </button>
 
                                     </NavLink>
+                                    </div>
+                                )
+
+                               }
 
                                 </>
 
@@ -106,10 +113,10 @@ const Navbar = () => {
                                 {
                                     user ? <>
 
-                                        <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">LogOut</button>
+                                        <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 w-full">LogOut</button>
                                     </> : <>
                                         <Link to='/login'>
-                                            <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ml-2 md:block hidden">Login</button>
+                                            <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 ml-2 md:block hidden">Login</button>
                                         </Link>
                                     </>
                                 }
@@ -118,7 +125,8 @@ const Navbar = () => {
                             </div>
 
                             <div className='md:flex items-center md:ml-4'>
-                                {user && (
+                                {
+                                user && (
                                     <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
                                         <button className="">
                                             <img
@@ -141,7 +149,7 @@ const Navbar = () => {
                         <div className='md:block hidden'>
                             <button onClick={handleToggleTheme} className='border-2 border-indigo-500 px-4 py-2 rounded-xl'>
 
-                                {!theme ? < HiOutlineLightBulb size={20} className='w-5 text-white' /> : <BsFillMoonFill size={20} className='text-black' />}
+                                {!theme ? < HiOutlineLightBulb size={20} className='w-5 text-[#8b83f9]' /> : <BsFillMoonFill size={20} className='text-black' />}
 
                             </button>
                         </div>
@@ -175,9 +183,9 @@ const Navbar = () => {
                         }
                         <div className=''>
                             {
-                                user ? <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">LogOut</button> : <Link to='/login'>
+                                user ? <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 w-full">LogOut</button> : <Link to='/login'>
 
-                                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">login</button>
+                                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 w-full">login</button>
                                 </Link>
                             }
 

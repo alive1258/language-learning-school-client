@@ -19,33 +19,33 @@ const Banner = () => {
     return (
         <div className='pt-[96px]'>
             <Carousel >
-                <div className='grid grid-cols-2 items-center bg-[#e8e2ec]  gap-8 p-10'>
+                <div className='grid grid-cols-2 items-center bannerBg  gap-8 p-10'>
                     <div>
                         <img className='rounded-2xl' src={banner1} />
                     </div>
-                    <div className='md:px-10'>
+                    <div className='md:px-10 text-gray-700' >
                         <h1 className="md:text-3xl  font-bold ">Putting Children First.
                             Preparing Children  For
                             Success In Life</h1>
-                        <p className='md:pt-8 md:block hidden'>Preparing children for success in life involves equipping them with
+                        <p className='md:pt-8 md:block hidden '>Preparing children for success in life involves equipping them with
                             essential life skills, such as problem-solving, communication, and
                             resilience.Nurturing their curiosity and fostering a love for learning
                             sets the foundation for a lifelong pursuit of knowledge and personal growth.</p>
 
                     </div>
                 </div>
-                <div className='grid grid-cols-2 items-center bg-[#e8e2ec] p-10'>
+                <div className='grid grid-cols-2 items-center bannerBg p-10'>
                     <img className='rounded-2xl' src={banner2} />
-                    <div className='md:px-10 '>
+                    <div className='md:px-10 text-gray-700'>
                         <h1 className="md:text-3xl font-bold ">Experience Effective Language <br /> Education at our School</h1>
                         <p className='md:pt-8 md:block hidden'>Our dedicated team of experienced language teachers utilizes innovative teaching methods to create an engaging and interactive learning environment.
                             We offer a comprehensive language curriculum that focuses on all aspects of language acquisition, including reading, writing, listening, and speaking.</p>
 
                     </div>
                 </div>
-                <div className='grid grid-cols-2 items-center bg-[#e8e2ec] p-10'>
+                <div className='grid grid-cols-2 items-center bannerBg p-10'>
                     <img className='rounded-2xl' src={banner3} />
-                    <div className='md:px-10'>
+                    <div className='md:px-10 text-gray-700'>
                         <h1 className="md:text-3xl font-bold ">Transform Your Communication Skills <br /> at our Language School</h1>
                         <p className='md:pt-8 md:block hidden'>Our experienced and passionate language instructors provide personalized guidance and support to help you achieve your language goals.
                             Whether you're a beginner or an advanced learner, we offer a wide range of language courses tailored to your proficiency level and learning needs.</p>
@@ -53,9 +53,9 @@ const Banner = () => {
 
 
                 </div>
-                <div className='grid grid-cols-2 items-center bg-[#e8e2ec] p-10'>
+                <div className='grid grid-cols-2 items-center bannerBg p-10'>
                     <img className='rounded-2xl' src={banner4} />
-                    <div className='md:px-10'>
+                    <div className='md:px-10 text-gray-700'>
                         <h1 className="md:text-3xl  font-bold ">To have another
                             language is to  <br /> possess
                             a second soul</h1>
@@ -68,9 +68,9 @@ const Banner = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-2 items-center bg-[#e8e2ec] p-10'>
+                <div className='grid grid-cols-2 items-center bannerBg p-10'>
                     <img className='rounded-2xl' src={banner5} />
-                    <div className='md:px-10'>
+                    <div className='md:px-10 text-gray-700'>
                         <h1 className="md:text-3xl font-bold">
                             Teaching Turning
                             Today's Learners <br /> Into

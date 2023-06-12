@@ -14,7 +14,7 @@ const TotalInstructor = ({ instructors }) => {
                     <p className='text-gray-700'>Instructor Email: <span className='font-semibold'>{email}</span></p>
 
                     <div className="card-actions my-4">
-                        <button className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 '>See More</button>
+                        <button className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 '>See More</button>
 
                     </div>
                 </div>

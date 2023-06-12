@@ -5,15 +5,13 @@ import axios from 'axios';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', 
+  baseURL: 'https://language-learning-school-server-bay.vercel.app', 
 });
 const useAxiosSecure = () => {
     const { logOut } = useAuth(); 
     const navigate = useNavigate(); 
   
-    // const axiosSecure = axios.create({
-    //   baseURL: 'http://localhost:5000', 
-    // });
+  
 
     useEffect(() => {
         axiosSecure.interceptors.request.use((config) => {

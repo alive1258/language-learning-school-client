@@ -8,7 +8,7 @@ import { GoLocation } from 'react-icons/go';
 
 const Footer = () => {
   return (
-    <div className="px-6 md:mt-36 md:px-10 bg-gray-200 md:py-10  ">
+    <div className="px-6 md:mt-36 md:px-10 bg-[#cbf8f8] text-gray-700 md:py-10  ">
       <div className="py-6">
         <div className="grid  md:grid-cols-2 grid-cols-1 gap-10  pb-8">
           <div>
@@ -18,7 +18,7 @@ const Footer = () => {
                   <img className='h-20 w-20' src={logo} alt="" />
                 </Link>
               </div>
-              <div className='text-2xl font-bold mb-2'><span className='text-blue-400'>Language Learning</span> School</div>
+              <div className='text-2xl font-bold mb-2'><span className='text-blue-500'>Language Learning</span> School</div>
             </div>
             <div className="pt-6 ">
               <p className=''>

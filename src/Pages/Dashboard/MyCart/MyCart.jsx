@@ -1,8 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import useClassCart from '../../../Hooks/useClassCart';
-import { Link } from 'react-router-dom';
-import { FaTrash } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
+// import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import MyCartTable from '../MyCartTable/MyCartTable';
 
@@ -25,7 +25,7 @@ const MyCart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/carts/${item._id}`, {
+                fetch(`https://language-learning-school-server-bay.vercel.app/carts/${item._id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
