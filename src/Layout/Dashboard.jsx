@@ -3,8 +3,10 @@ import Navbar from '../Pages/Shared/Navbar/Navbar';
 
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaBook, FaUsers } from 'react-icons/fa';
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { ImSpoonKnife } from 'react-icons/im';
+import { MdManageHistory ,MdOutlinePeople} from 'react-icons/md';
+// import { FaPeopleLine } from 'react-icons/fa';
+import { BsBook } from 'react-icons/bs';
+import { AiOutlineFileAdd } from 'react-icons/ai';
 import useClassCart from '../Hooks/useClassCart';
 import useAdmin from '../Hooks/useAdmin';
 import useInstructor from '../Hooks/useInstructor';
@@ -42,7 +44,7 @@ const Dashboard = () => {
                                     <li>
 
                                         <li><NavLink to='/dashboard/adminhome'><FaHome />Admin Home</NavLink></li>
-                                        <li><NavLink to='/dashboard/manageclasses'><FaWallet />Manage Classes</NavLink></li>
+                                        <li><NavLink to='/dashboard/manageclasses'><MdManageHistory />Manage Classes</NavLink></li>
                                         <li><NavLink to='/dashboard/history'><FaBook />Manage Booking</NavLink></li>
                                         <li><NavLink to='/dashboard/allusers'><FaUsers />All Users</NavLink></li>
 
@@ -51,13 +53,13 @@ const Dashboard = () => {
                                     isInstructor ? <>
                                         <li>
                                             <li><NavLink to='/dashboard/instructorhome'><FaHome />Instructor Home</NavLink></li>
-                                            <li><NavLink to='/dashboard/addcourse'><ImSpoonKnife />Add an course</NavLink></li>
-                                            <li><NavLink to='/dashboard/myclasses'><ImSpoonKnife />My Classes</NavLink></li>
-                                            <li><NavLink to='/dashboard/enrollstudents'><ImSpoonKnife />Total Enrolled Students</NavLink></li>
+                                            <li><NavLink to='/dashboard/addcourse'><AiOutlineFileAdd />Add an course</NavLink></li>
+                                            <li><NavLink to='/dashboard/myclasses'><BsBook />My Classes</NavLink></li>
+                                            <li><NavLink to='/dashboard/enrollstudents'><MdOutlinePeople />Total Enrolled Students</NavLink></li>
                                         </li>
                                         </>: 
                                         <>
-                                            <li><NavLink to='/dashboard/userhome' ><FaHome />User Home</NavLink></li>
+                                            <li><NavLink to='/dashboard/studenthome' ><FaHome />User Home</NavLink></li>
                                             <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
                                             <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
                                             <li>

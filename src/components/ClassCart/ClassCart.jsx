@@ -3,25 +3,51 @@ import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useClassCart from '../../Hooks/useClassCart';
+import useAdmin from '../../Hooks/useAdmin';
+import useInstructor from '../../Hooks/useInstructor';
 
-const ClassCart = ({course}) => {
-    const {_id, image, price, course_name,instructor,available_seats} = course;
+const ClassCart = ({ course }) => {
+  const { _id, image, price, course_name, instructor, available_seats } = course;
 
-    const {user}=useAuth()
-    const [,refetch] = useClassCart()
-    const navigate = useNavigate()
-    const location = useLocation()
+  const { user } = useAuth()
+  const [, refetch] = useClassCart()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [isAdmin] = useAdmin()
+  const [isInstructor] = useInstructor()
 
 
 
+  // console.log(course)
+  const handleAddToCart = (course) => {
 
-    // console.log(course)
-    const handleAddToCart=(course)=>{
-      console.log('course',course)
-      if(user && user.email){
-        const cartItem = { courseItemId: _id, course_name, image, price,instructor,available_seats, email: user.email }
+    
+      let user_type = 0;
+      if(isAdmin == true){
+        user_type = 1;
+      } else if(isInstructor == true) {
+        user_type = 1;
+      } else {
+        user_type = 0;
+      }
 
-        fetch('http://localhost:5000/carts', {
+      if (user_type == 1) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'You can not enroll, because you are not student',       
+          showConfirmButton: false,
+          timer: 1500
+        })
+        return false;
+      }
+
+
+    console.log('course', course)
+    if (user && user.email) {
+      const cartItem = { courseItemId: _id, course_name, image, price, instructor, available_seats, email: user.email }
+
+      fetch('http://localhost:5000/carts', {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -30,7 +56,7 @@ const ClassCart = ({course}) => {
       })
         .then(res => res.json())
         .then(data => {
-      
+
           if (data.insertedId) {
             refetch();
             Swal.fire({
@@ -61,27 +87,30 @@ const ClassCart = ({course}) => {
 
 
 
-    }
-    return (
-        <div className="card  bg-base-100 shadow-xl">
-        <figure><img className='w-full h-44' src={image} alt="Shoes" /></figure>
-        <div className="card-body">
-          <h2 className="card-title">
+  }
+  return (
+    <div className="card  bg-base-100 shadow-xl">
+      <figure><img className='w-full h-44' src={image} alt="Shoes" /></figure>
+      <div className="card-body">
+        <h2 className="card-title">
           {course_name}
-            
-          </h2>
-          <p className='text-gray-700'>Instructor Name: <span className='font-semibold '>{instructor}</span></p>
-         <div className='flex'>
-         <p className='text-gray-700'>Price: ${price}</p>
+
+        </h2>
+        <p className='text-gray-700'>Instructor Name: <span className='font-semibold '>{instructor}</span></p>
+        <div className='flex'>
+          <p className='text-gray-700'>Price: ${price}</p>
           <p className='text-gray-700'>Available Seats: {available_seats}</p>
-         </div>
-          <div className="card-actions my-4">
-            <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] '>Enroll Now</button>
-            
-          </div>
+        </div>
+        <div className="card-actions my-4">
+
+        
+
+          <button  onClick={()=>handleAddToCart(course)} className='px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>Enroll Now</button>
+
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default ClassCart;

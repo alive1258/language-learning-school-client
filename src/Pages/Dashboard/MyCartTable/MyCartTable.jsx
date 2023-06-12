@@ -2,7 +2,7 @@ import React from 'react';
 import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const MyCartTable = ({ item, index }) => {
+const MyCartTable = ({ item, index ,handleDelete}) => {
     return (
         <>
             <tr >
@@ -28,6 +28,7 @@ const MyCartTable = ({ item, index }) => {
                 <td className=''>
                     {item.available_seats}
                 </td>
+                {/* parseFloat(total.toFixed(2)) */}
                 <td className=''>${item.price}</td>
                 <td>
 

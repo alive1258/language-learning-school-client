@@ -17,6 +17,9 @@ import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
 import UpdateCourse from "../Pages/Dashboard/UpdateCourse/UpdateCourse";
 import ManageClasses from "../Pages/Dashboard/ManageClasses/ManageClasses";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import StudentHome from "../Pages/Dashboard/StudentHome/StudentHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
 
 
 
@@ -57,18 +60,23 @@ export const router = createBrowserRouter([
       element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
       children:[
         {
-          path:"allusers",
-          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
+          path:'studenthome',
+          element:<StudentHome></StudentHome>
         },
+      
         {
           path:"mycart",
           element:<MyCart></MyCart>
         },
         {
           path:'payment/:id',
-          element:<Payment></Payment>,
-          // loader:({params})=> fetch(`http://localhost:5000/carts/${params._id}`)
+          element:<Payment></Payment>
 
+        },
+        // instructor 
+        {
+          path:'instructorhome',
+          element:<InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
         },
       
         {
@@ -83,6 +91,15 @@ export const router = createBrowserRouter([
         {
           path:"updatecourse/:id",
           element:<InstructorRoute><UpdateCourse></UpdateCourse></InstructorRoute>
+        },
+        // admin 
+        {
+          path:'adminhome',
+          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
+        },
+        {
+          path:"allusers",
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
         {
           path:"manageclasses",

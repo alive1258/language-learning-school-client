@@ -2,15 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
 import './Navbar.css'
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import { BsMoonStars,BsFillMoonFill } from 'react-icons/bs';
+import { AiOutlineClose, AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
+import { BsFillMoonFill } from 'react-icons/bs';
 import { HiOutlineLightBulb } from 'react-icons/hi';
 import useAuth from '../../../Hooks/useAuth';
 import useClassCart from '../../../Hooks/useClassCart';
+import useAdmin from '../../../Hooks/useAdmin';
+import useInstructor from '../../../Hooks/useInstructor';
 
 const Navbar = () => {
     const { user, logOut } = useAuth()
     const [cart] = useClassCart()
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor()
 
 
     const [nav, setNav] = useState(false)
@@ -44,9 +48,10 @@ const Navbar = () => {
 
     return (
         <>
-            <div className='bg-gray-200  max-w-screen-2xl w-full fixed z-10'>
+            <div className='max-w-screen-2xl bg-gray-200 w-full fixed z-10'>
 
                 <div className='py-2 md:px-10  flex justify-between items-center '>
+
 
                     <div className='flex items-center gap-2'>
                         <div className=''>
@@ -57,18 +62,41 @@ const Navbar = () => {
                         <div className='md:text-2xl text-xl  font-bold mb-2'><span className='text-blue-400'>Language Learning</span> School</div>
                     </div>
 
-                    <div className="md:flex items-center hidden gap-8 text-lg  font-semibold">
-                        <NavLink to="/" className='text-white'>Home</NavLink>
-                        <NavLink to='/Instructors' className='text-white'>Instructors</NavLink>
-                        <NavLink to='/classes' className='text-white'>Classes</NavLink>
-                        <NavLink to='/dashboard/mycart' className='text-white'>Dashboard </NavLink>
-                        <NavLink to='/dashboard/mycart' className='text-white'>
-                            <button className="btn">
+                    <div className="md:flex items-center hidden gap-8 text-lg font-semibold">
+                        <NavLink to="/" >Home</NavLink>
+                        <NavLink to='/Instructors' >Instructors</NavLink>
+                        <NavLink to='/classes' >Classes</NavLink>
 
-                                <div className="badge">+{cart?.length || 0}</div>
-                            </button>
+                        {
+                            isAdmin ? <>
 
-                        </NavLink>
+                                <NavLink to='/dashboard/adminhome' >dashboard</NavLink>
+
+
+                            </> :
+                                isInstructor ? <>
+
+                                    <NavLink to='/dashboard/instructorhome' >dashboard</NavLink>
+
+                                </> : <>
+
+                                    <NavLink to='/dashboard/studenthome' >dashboard</NavLink>
+                                    <NavLink to='/dashboard/mycart' className='mx-4 mt-4'>
+                                        <button className="relative text-gray-700">
+                                            <div><AiOutlineShoppingCart size={25} className='' /></div>
+
+                                            <div className="badge absolute -top-4" >+{cart?.length || 0}</div>
+                                        </button>
+
+                                    </NavLink>
+
+                                </>
+
+
+
+                        }
+
+
 
                         <div className="md:flex justify-center items-center">
 
@@ -78,10 +106,10 @@ const Navbar = () => {
                                 {
                                     user ? <>
 
-                                        <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] w-full">LogOut</button>
+                                        <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">LogOut</button>
                                     </> : <>
                                         <Link to='/login'>
-                                            <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] ml-2 md:block hidden">Login</button>
+                                            <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ml-2 md:block hidden">Login</button>
                                         </Link>
                                     </>
                                 }
@@ -110,11 +138,11 @@ const Navbar = () => {
                                 )}
                             </div>
                         </div>
-                        <div>
-                            <button onClick={handleToggleTheme} className='border-2 border-gray-400 px-4 py-2 rounded-xl'>
-                                {/* <BsMoonStars /> */}
-                                {!theme ? < HiOutlineLightBulb size={20} className='w-5 text-white' /> : <BsFillMoonFill size={20} className='text-black'/>}
-                                {/* <BsFillMoonFill /> */}
+                        <div className='md:block hidden'>
+                            <button onClick={handleToggleTheme} className='border-2 border-indigo-500 px-4 py-2 rounded-xl'>
+
+                                {!theme ? < HiOutlineLightBulb size={20} className='w-5 text-white' /> : <BsFillMoonFill size={20} className='text-black' />}
+
                             </button>
                         </div>
 
@@ -130,26 +158,26 @@ const Navbar = () => {
                 {/* mobile menu  */}
 
                 <div >
-                    <div className={!nav ? 'hidden' : 'absolute bg-gray-200 w-full text-white  h-screen md:hidden px-8'}>
-                        <p className='border-b-2 mb-4 border-[#ff8c00] w-full'>
+                    <div className={!nav ? 'hidden' : 'absolute bg-gray-200 font-semibold w-full text-white  h-screen md:hidden px-8'}>
+                        <p className='border-b-2 mb-4 border-purple-500 w-full'>
                             <NavLink to="/">Home</NavLink>
                         </p>
-                        <p className='border-b-2 mb-4 border-[#ff8c00] w-full'>
+                        <p className='border-b-2 mb-4 border-purple-500 w-full'>
                             <NavLink to='/instructors'>Instructors</NavLink>
                         </p>
-                        <p className='border-b-2 mb-4 border-[#ff8c00] w-full'>
+                        <p className='border-b-2 mb-4 border-purple-500 w-full'>
                             <NavLink to='/classes'>Classes</NavLink>
                         </p>
                         {
                             user && <>
-                                <NavLink to='/secret'>Secret</NavLink>
+                                <NavLink to='/secret'>Dashboard</NavLink>
                             </>
                         }
                         <div className=''>
                             {
-                                user ? <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] w-full">LogOut</button> : <Link to='/login'>
+                                user ? <button onClick={handleLogOut} className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">LogOut</button> : <Link to='/login'>
 
-                                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-[#ff8c00] hover:bg-[#e78f24] w-full">login</button>
+                                    <button className="px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full">login</button>
                                 </Link>
                             }
 

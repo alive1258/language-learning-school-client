@@ -9,7 +9,7 @@ const PopularClass = () => {
     const popularClasses = classes.slice(0, 6)
 
     return (
-        <div>
+        <div className='mt-24'>
             <SectionTitle heading="Choose Your Popular Classes"
 
             />

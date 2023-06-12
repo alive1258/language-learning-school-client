@@ -10,7 +10,8 @@ import MyCartTable from '../MyCartTable/MyCartTable';
 
 const MyCart = () => {
     const [cart, refetch] = useClassCart()
-    const total = cart.reduce((sum, course) => course.price + sum, 0)
+    const total =cart.reduce((sum, course) => course.price + sum, 0)
+    const totalPrice = parseFloat(total.toFixed(2))
     // const availableSeat = cart.reduce((subtract, course) => course.available_seats - subtract, 0)
 
     const handleDelete = item => {
@@ -53,7 +54,7 @@ const MyCart = () => {
             </Helmet>
             <div className='uppercase w-full flex text-[#151515] items-center font-semibold h-24 justify-evenly'>
                 <h3 className='text-3xl'>Total Items: {cart.length}</h3>
-                <h3 className='text-3xl'>Total Price: ${total}</h3>
+                <h3 className='text-3xl'>Total Price: ${totalPrice}</h3>
                 {/* <h3 className='text-3xl'>availableSeat: {availableSeat}</h3> */}
                 {/* <Link to='/dashboard/payment'>
                     <button className="btn btn-warning btn-sm">Pay</button>
@@ -83,6 +84,8 @@ const MyCart = () => {
                             key={item._id}
                             item={item}
                             index={index}
+                            handleDelete={handleDelete}
+                           
                             
                             ></MyCartTable>
                             
