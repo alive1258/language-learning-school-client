@@ -45,7 +45,7 @@ const Dashboard = () => {
 
                                         <li><NavLink to='/dashboard/adminhome'><FaHome />Admin Home</NavLink></li>
                                         <li><NavLink to='/dashboard/manageclasses'><MdManageHistory />Manage Classes</NavLink></li>
-                                        <li><NavLink to='/dashboard/history'><FaBook />Manage Booking</NavLink></li>
+                                        {/* <li><NavLink to='/dashboard/history'><FaBook />Manage Booking</NavLink></li> */}
                                         <li><NavLink to='/dashboard/allusers'><FaUsers />All Users</NavLink></li>
 
                                     </li>
@@ -59,9 +59,9 @@ const Dashboard = () => {
                                         </li>
                                         </>: 
                                         <>
-                                            <li><NavLink to='/dashboard/studenthome' ><FaHome />User Home</NavLink></li>
-                                            <li><NavLink to='/dashboard/reservations'><FaCalendarAlt />Reservations</NavLink></li>
-                                            <li><NavLink to='/dashboard/history'><FaWallet />Payment History</NavLink></li>
+                                            <li><NavLink to='/dashboard/studenthome' ><FaHome />Student Home</NavLink></li>
+                                            <li><NavLink to='/dashboard/enrollclass'><BsBook />My Enrolled Classes</NavLink></li>
+                                            <li><NavLink to='/dashboard/paymenthistory'><FaWallet />Payment History</NavLink></li>
                                             <li>
                                                 <NavLink to='/dashboard/mycart'><FaShoppingCart />
                                                     My Cart <span className="">+{cart?.length || 0}</span>

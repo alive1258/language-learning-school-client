@@ -6,8 +6,8 @@ import { Fade, Reveal, Slide } from 'react-awesome-reveal';
 
 const PopularClass = () => {
     const [classes] = useClasses()
-    // const popularAllClass = information.filter(course => course.category === "popularClass")
-    const popularClasses = classes.slice(0, 6)
+    const approvedClass = classes.filter(course => course.status === "approved")
+    const popularClasses = approvedClass.slice(0, 6)
 
     return (
         <div className='mt-24'>

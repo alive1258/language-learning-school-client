@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Instructors from "../Pages/Instructors/Instructors/Instructors";
@@ -20,92 +20,110 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import StudentHome from "../Pages/Dashboard/StudentHome/StudentHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import InstructorHome from "../Pages/Dashboard/InstructorHome/InstructorHome";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import StudentEnrollClass from "../Pages/Dashboard/StudentEnrollClass/StudentEnrollClass";
+import TotalEnrollStudent from "../Pages/Dashboard/TotalEnrollStudent/TotalEnrollStudent";
 
 
 
-  
+
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      errorElement:<ErrorPage></ErrorPage>,
-      children:[
-        {
-          path:'/',
-          element:<Home></Home>
-        },
-        {
-          path:'instructors',
-          element:<Instructors></Instructors>
-        },
-        {
-          path:'classes',
-          element:<Classes></Classes>
-        },
-       
-        {
-          path:'login',
-          element:<Login></Login>
-        },
-        {
-          path:'signup',
-          element:<SignUp></SignUp>
-        }
-      
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+      },
+      {
+        path: 'instructors',
+        element: <Instructors></Instructors>
+      },
+      {
+        path: 'classes',
+        element: <Classes></Classes>
+      },
 
-      ]
-    },
-    {
-      path:'dashboard',
-      element:<PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
-      children:[
-        {
-          path:'studenthome',
-          element:<StudentHome></StudentHome>
-        },
-      
-        {
-          path:"mycart",
-          element:<MyCart></MyCart>
-        },
-        {
-          path:'payment/:id',
-          element:<Payment></Payment>
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'signup',
+        element: <SignUp></SignUp>
+      }
 
-        },
-        // instructor 
-        {
-          path:'instructorhome',
-          element:<InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
-        },
-      
-        {
-          path:'addcourse',
-          element:<InstructorRoute><AddCourse></AddCourse></InstructorRoute>
-        },
-        {
-          path:"myclasses",
-          element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
-        },
-    
-        {
-          path:"updatecourse/:id",
-          element:<InstructorRoute><UpdateCourse></UpdateCourse></InstructorRoute>
-        },
-        // admin 
-        {
-          path:'adminhome',
-          element:<AdminRoute><AdminHome></AdminHome></AdminRoute>
-        },
-        {
-          path:"allusers",
-          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
-        },
-        {
-          path:"manageclasses",
-          element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
-        }
-       
-      ]
-    }
-  ]);
+
+    ]
+  },
+  {
+    path: 'dashboard',
+    element: <PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
+    children: [
+      {
+        path: 'studenthome',
+        element: <StudentHome></StudentHome>
+      },
+
+      {
+        path: "mycart",
+        element: <MyCart></MyCart>
+      },
+      {
+        path: 'payment/:id',
+        element: <Payment></Payment>
+
+      },
+      {
+        path: "paymenthistory",
+        element: <PaymentHistory></PaymentHistory>
+      },
+      {
+        path:'enrollclass',
+        element:<StudentEnrollClass></StudentEnrollClass>
+      }
+      ,
+
+      // instructor 
+      {
+        path: 'instructorhome',
+        element: <InstructorRoute><InstructorHome></InstructorHome></InstructorRoute>
+      },
+
+      {
+        path: 'addcourse',
+        element: <InstructorRoute><AddCourse></AddCourse></InstructorRoute>
+      },
+      {
+        path: "myclasses",
+        element: <InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+      },
+      {
+        path:'enrollstudents',
+        element:<TotalEnrollStudent></TotalEnrollStudent>
+      }
+      ,
+
+      {
+        path: "updatecourse/:id",
+        element: <InstructorRoute><UpdateCourse></UpdateCourse></InstructorRoute>
+      },
+      // admin 
+      {
+        path: 'adminhome',
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+      },
+      {
+        path: "allusers",
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+      },
+      {
+        path: "manageclasses",
+        element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+      }
+
+    ]
+  }
+]);

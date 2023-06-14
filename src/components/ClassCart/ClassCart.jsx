@@ -48,6 +48,7 @@ const ClassCart = ({ course }) => {
       const cartItem = { courseItemId: _id, course_name, image, price, instructor, available_seats, email: user.email }
 
       fetch('https://language-learning-school-server-bay.vercel.app/carts', {
+      // fetch('https://localhost:5000/carts', {
         method: "POST",
         headers: {
           "content-type": "application/json"

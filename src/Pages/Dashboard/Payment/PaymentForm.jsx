@@ -88,6 +88,7 @@ const PaymentForm = ({ price ,singleCart}) => {
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
+                instructor:singleCart.instructor,
                 date: new Date(),
                 quantity: singleCart.length,
                 // cartItems: singleCart.map(item => item._id),
@@ -96,7 +97,7 @@ const PaymentForm = ({ price ,singleCart}) => {
                 // courseItems: singleCart.map(item => item.courseItemId),
                 courseItems: singleCart.courseItemId,
                 status: 'service pending',
-                itemNames: singleCart.name
+                itemNames: singleCart.course_name
                 
            
             }

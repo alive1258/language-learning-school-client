@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 const axiosSecure = axios.create({
+
   baseURL: 'https://language-learning-school-server-bay.vercel.app', 
 });
 const useAxiosSecure = () => {

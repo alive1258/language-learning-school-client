@@ -117,7 +117,7 @@ const AddCourse = () => {
 
 
                 </div>
-                <input className="btn btn-lg mt-4" type="submit" value="Add Course" />
+                <input className="btn btn-lg px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 mt-4" type="submit" value="Add Course" />
 
 
 

@@ -7,7 +7,7 @@ import { Fade, Reveal, Slide } from "react-awesome-reveal";
 
 const AllClasses = () => {
     const [classes] = useClasses()
-    // const popularAllClass = information.filter(course => course.category === "popularClass")
+    const approvedClass = classes.filter(course => course.status === "approved")
     return (
         <div className='pt-28 px-10'>
          <Reveal effect={[Fade, Slide]} duration={1000} delay={200}>
@@ -20,7 +20,7 @@ const AllClasses = () => {
             <div className='grid md:grid-cols-3 grid-cols-1 gap-10 my-10 md:px-10 pt-10'>
                 <Fade>
                 {
-                    classes.map(course => <ClassCart
+                    approvedClass.map(course => <ClassCart
                         key={course._id}
                         course={course}
                     >

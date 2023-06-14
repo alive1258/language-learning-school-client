@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Helmet } from 'react-helmet';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import login from '../../assets/images/login.png'
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
@@ -12,11 +12,13 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     // const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signIn } = useAuth()
+    const {user, signIn } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
-
+// if(user?.uid){
+//     return <Navigate to={from}/>
+// }
 
     const onSubmit = (data) => {
         // Handle form submission

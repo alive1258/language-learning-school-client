@@ -4,6 +4,7 @@ import PopularClass from '../PopularClass/PopularClass';
 import { Helmet } from 'react-helmet-async';
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import EasyLearn from '../EasyLearn/EasyLearn';
+import ContactUs from '../ContactUs/ContactUs';
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
             <PopularClass></PopularClass>
             <PopularInstructor></PopularInstructor>
             <EasyLearn></EasyLearn>
+            <ContactUs></ContactUs>
           
         </div>
     );

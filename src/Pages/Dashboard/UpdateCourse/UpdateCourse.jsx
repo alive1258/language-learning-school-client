@@ -2,19 +2,18 @@ import React from 'react';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
-// import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+
 import { useForm } from 'react-hook-form';
-// import useUpdateClass from '../../../Hooks/useUpdateClass';
-// import useClasses from '../../../Hooks/useClasses';
-import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import useUpdateClass from '../../../Hooks/useUpdateClass';
+
 
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 const UpdateCourse = () => {
     const { user } = useAuth()
-    // const [classes] = useClasses()
-    // const [axiosSecure] = useUpdateClass()
-    const [axiosSecure] = useAxiosSecure()
+
+    const [axiosSecure] = useUpdateClass()
+
     const { register, handleSubmit, reset } = useForm();
 
     const img_hosting_url = `https://api.imgbb.com/1/upload?&key=${img_hosting_token}`
@@ -27,7 +26,7 @@ const UpdateCourse = () => {
         console.log('data', data)
 
         fetch(img_hosting_url, {
-            method: 'Patch',
+            method: 'PATCH',
             body: formData
         })
             .then(res => res.json())
@@ -42,7 +41,7 @@ const UpdateCourse = () => {
                     axiosSecure.patch(`/classes/${_id}`,courseItem)
                     .then(data=>{
                         console.log('after Update new course Item', data.data)
-                        if(data.data.insertedId){
+                        if(data.data.modifiedCount >0){
                             reset();
                             Swal.fire({
                                 position: 'top-end',
@@ -95,7 +94,7 @@ const UpdateCourse = () => {
                     </label>
                     <input type="text"
                     // defaultValue={data?.course_name}
-                        placeholder="Class name"
+                        placeholder="Class name" 
                         {...register("course_name", { required: true, maxLength: 120 })}
                         className="input input-bordered w-full " />
                 </div>
@@ -123,7 +122,7 @@ const UpdateCourse = () => {
 
 
             </div>
-            <input className="btn btn-lg mt-4" type="submit" value="Update Course" />
+            <input className="btn btn-lg px-4 rounded-lg py-2 text-lg font-semibold text-white bg-gradient-to-r from-cyan-400 to-blue-400 mt-4" type="submit" value="Update Course" />
 
 
 

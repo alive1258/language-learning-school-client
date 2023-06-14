@@ -4,11 +4,12 @@ import { Helmet } from 'react-helmet-async';
 import { FaTrash, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 
 
 const AllUsers = () => {
-    const [axiosSecure]=useAxiosSecure()
+    const [axiosSecure] = useAxiosSecure()
     const { data: users = [], refetch } = useQuery(['users'], async () => {
         const res = await axiosSecure.get('/users')
         return res.data;
@@ -59,10 +60,11 @@ const AllUsers = () => {
             <Helmet>
                 <title>Language Learning School | All Users</title>
             </Helmet>
-            <div className='h-24 uppercase'>
+            <SectionTitle heading="All users"/>
+            {/* <div className='h-24 uppercase'>
 
                 Total Users: {users.length}
-            </div>
+            </div> */}
 
             <div className="overflow-y-auto overflow-x-auto scroll-smooth w-11/12 h-[500px]">
                 <table className="table w-full">
