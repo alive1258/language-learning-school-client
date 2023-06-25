@@ -110,7 +110,7 @@ const UpdateCourse = () => {
                     <label className="label">
                         <span className="label-text font-semibold">Price*</span>
                     </label>
-                    <input type="number" {...register("price", { required: true })} placeholder="Price" className="input input-bordered w-full " />
+                    <input type="number" {...register("price", { required: true })}  className="input input-bordered w-full " />
                 </div>
 
                 <div className="form-control w-full">

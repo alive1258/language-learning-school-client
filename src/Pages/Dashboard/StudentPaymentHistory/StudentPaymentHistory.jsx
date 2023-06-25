@@ -21,6 +21,8 @@ const StudentPaymentHistory = () => {
                                 <th>transactionId</th>
                                 <th>Date</th>
                                 <th>Price</th>
+                                {/* <th>instructor</th>
+                                <th>Course name</th> */}
                                 <th>email</th>
 
                             </tr>
@@ -42,6 +44,8 @@ const StudentPaymentHistory = () => {
                                         {course.date}
                                     </td>
                                     <td>${course.price}</td>
+                                    {/* <td>{course.instructor}</td>
+                                    <td>{course.itemNames}</td> */}
                                     <td>{course.email}</td>
 
                                 </tr>

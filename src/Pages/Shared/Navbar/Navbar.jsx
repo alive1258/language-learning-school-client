@@ -166,7 +166,7 @@ const Navbar = () => {
                 {/* mobile menu  */}
 
                 <div >
-                    <div className={!nav ? 'hidden' : 'absolute bg-gray-200 font-semibold w-full text-white  h-screen md:hidden px-8'}>
+                    <div className={!nav ? 'hidden' : 'absolute bg-[#cbf8f8] font-semibold w-full text-gray-800  h-screen md:hidden px-8'}>
                         <p className='border-b-2 mb-4 border-purple-500 w-full'>
                             <NavLink to="/">Home</NavLink>
                         </p>
